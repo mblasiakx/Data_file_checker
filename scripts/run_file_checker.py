@@ -28,6 +28,8 @@ questions = [
         "reference": "Lyon has not been relegated; the question is based on a false assumption."
     }
 ]
+
+
 text = load_file("data/Lyon.txt")
 chunks = split_text_form_file(text)
 retriever = create_retriever(chunks)
@@ -37,3 +39,5 @@ qa_data = run_qa(llm_chain, retriever, questions)
 results_df = evaluate_answers(qa_data)
 results_df.to_csv("evaluation/results/evaluation.csv", index=False)
 print(results_df)
+
+
