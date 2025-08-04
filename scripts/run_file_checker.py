@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from rag.file_loader import load_file
+from rag.file_loader import load_document
 from rag.splitter import split_text_form_file
 from rag.retriever import create_retriever
 from rag.generator import create_chain
@@ -35,7 +35,8 @@ questions = [
 ]
 
 
-text = load_file("data/Lyon.txt")
+#text = load_file("data/Lyon.txt")
+text= load_document("data/Lyon.docx")
 chunks = split_text_form_file(text)
 retriever = create_retriever(chunks)
 llm_chain = create_chain("gemma3:1b", retriever)
