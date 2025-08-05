@@ -17,5 +17,5 @@ __pycache__/
 .idea/
 
 # Evaluation results and outputs
-evaluation/results/
+#evaluation/results/
 *.cs
