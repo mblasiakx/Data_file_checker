@@ -12,7 +12,7 @@ base_questions = [
     },
     {
         "question": "Why Lyon has been relegated?",
-        "reference": "Lyon has not been relegated; the question is based on a false assumption."
+        "reference": "Lyon has not been relegated because of bad finacial condition."
     },
 
     {
