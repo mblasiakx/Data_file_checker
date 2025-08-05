@@ -2,6 +2,7 @@ import ragas.llms.base as base
 from langchain_ollama import OllamaLLM
 import sys
 import os
+import csv
 from dotenv import load_dotenv
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -42,6 +43,8 @@ for style_name, formatter in styles.items():
     qa_data = run_qa(llm_chain, retriever, styled_questions)
     results_df = evaluate_answers(qa_data)
     results_df["formatted_contexts"] = [d["formatted_contexts"] for d in qa_data]
-    results_df.to_csv(f"evaluation/results/evaluation_{style_name}.csv", index=False)
+    #results_df.to_csv(f"evaluation/results/evaluation_{style_name}.csv", index=False)
+    results_df.to_csv(f"evaluation/results/evaluation_{style_name}.csv",index=False, quoting=1)
+    print(results_df)
 
-
+    

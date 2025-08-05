@@ -16,7 +16,7 @@ def run_qa(llm_chain, retriever, questions):
         qa_data.append({
             "question": q["question"],
             "answer": result["result"],
-            "retrieved_contexts": raw_contexts,  # dla ragas
+            "retrieved_contexts": raw_contexts, 
             "formatted_contexts": format_contexts_with_line_numbers(raw_contexts),
             "reference": q["reference"]
         })
