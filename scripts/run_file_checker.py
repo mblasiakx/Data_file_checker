@@ -42,9 +42,13 @@ for style_name, formatter in styles.items():
         })
     qa_data = run_qa(llm_chain, retriever, styled_questions)
     results_df = evaluate_answers(qa_data)
-    results_df["formatted_contexts"] = [d["formatted_contexts"] for d in qa_data]
-    #results_df.to_csv(f"evaluation/results/evaluation_{style_name}.csv", index=False)
-    results_df.to_csv(f"evaluation/results/evaluation_{style_name}.csv",index=False, quoting=1)
-    print(results_df)
 
-    
+    #results_df["formatted_contexts"] = [d["formatted_contexts"] for d in qa_data]
+    formatted_contexts = [sample["formatted_contexts"] for sample in qa_data]
+    results_df["formatted_contexts"] = formatted_contexts
+    results_df.to_csv(f"evaluation/results/evaluation_{style_name}.csv", index=False,quoting=csv.QUOTE_ALL,encoding="utf-8")
+    #results_df.to_csv(f"evaluation/results/evaluation_{style_name}.csv", index=False)
+    #print(results_df)
+
+
+
