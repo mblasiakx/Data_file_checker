@@ -11,7 +11,7 @@ def run_qa(llm_chain, retriever, questions):
     for q in questions:
         result = llm_chain.invoke({"query": q["question"]})
         raw_contexts = [doc.page_content for doc in retriever.invoke(q["question"])]
-        formatted_contexts = "\n".join([f"[{i+1}] {ctx}" for i, ctx in enumerate(raw_contexts)])
+        formatted_contexts = "\n" + "\n".join([f"[{i+1}] {ctx}" for i, ctx in enumerate(raw_contexts)])
         
         qa_data.append({
             "question": q["question"],
