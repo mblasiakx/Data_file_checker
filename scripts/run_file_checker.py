@@ -41,7 +41,11 @@ for style_name, formatter in styles.items():
             "reference": q["reference"]
         })
     qa_data = run_qa(llm_chain, retriever, styled_questions)
-    results_df = evaluate_answers(qa_data)
+    retriever = create_retriever(chunks)
+    embeddings = retriever.vectorstore.embedding_function
+
+    results_df = evaluate_answers(qa_data, embeddings)
+    #results_df = evaluate_answers(qa_data)
 
     #results_df["formatted_contexts"] = [d["formatted_contexts"] for d in qa_data]
     formatted_contexts = [sample["formatted_contexts"] for sample in qa_data]
