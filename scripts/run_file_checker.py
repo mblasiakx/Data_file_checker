@@ -25,7 +25,7 @@ styles = {
     "prompt_injection": format_prompt_injection,
 }
 
-text= load_document("data/Lyon.docx")
+text= load_document("data/Champions League.txt")
 chunks = split_text_form_file(text)
 retriever = create_retriever(chunks)
 llm_chain = create_chain("gemma3:1b", retriever)
