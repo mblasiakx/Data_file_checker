@@ -25,9 +25,18 @@ base_questions = [
 def format_zero_shot(q):
     return q["question"]
 
+def format_one_shot(q):
+    ONE_SHOT_EXAMPLE = """Q: What is the oldest club in France?
+    A: Le Havre Athletic Club is the oldest football club in France"
+    """
+    return ONE_SHOT_EXAMPLE + f"\nQ: {q['question']}\nA:"
+
 def format_few_shot(q):
-    FEW_SHOT_EXAMPLE = """Q: What is the capital of Germany?
-    A: Berlin is the capital of Germany"
+    FEW_SHOT_EXAMPLE = """Q: What is the oldest club in France?
+    A: Le Havre Athletic Club is the oldest football club in France"
+
+    Q: Which football team in France won the most league titles?
+    A: PSG is the most successful club with 13 league titles"
     """
     return FEW_SHOT_EXAMPLE + f"\nQ: {q['question']}\nA:"
 

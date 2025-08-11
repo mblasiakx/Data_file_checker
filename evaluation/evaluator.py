@@ -1,7 +1,7 @@
 from ragas.evaluation import evaluate
-from ragas.metrics import faithfulness, answer_relevancy, context_precision, context_recall
+from ragas.metrics import faithfulness, answer_relevancy, context_precision, context_recall #answer_completeness 
 from sklearn.metrics.pairwise import cosine_similarity 
-# Answer Completeness - Porównanie embeddingów z odpowiedzią referencyjną
+
 
 #Conciseness / Verbosity
 #Answer Coverage

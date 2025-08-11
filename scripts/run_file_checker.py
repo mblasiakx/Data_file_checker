@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from prompts.prompt_styles import base_questions, format_zero_shot, format_few_shot, format_cot, format_prompt_injection
+from prompts.prompt_styles import base_questions, format_zero_shot, format_one_shot, format_few_shot, format_cot, format_prompt_injection
 from rag.file_loader import load_document
 from rag.splitter import split_text_form_file
 from rag.retriever import create_retriever
@@ -19,6 +19,7 @@ load_dotenv()
 
 styles = {
     "zero_shot": format_zero_shot,
+    "one_shot": format_one_shot,
     "few_shot": format_few_shot,
     "chain_of_thought": format_cot,
     "prompt_injection": format_prompt_injection,
