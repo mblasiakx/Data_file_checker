@@ -38,7 +38,22 @@ base_questions = [
     {
         "question": "How many teams participated in the first edition of the Champions League?",
         "reference": "In the first edition of the Champions League 8 teams were playing."
-    }
+    },
+
+    {
+        "question": "What is a Real Madrid?",
+        "reference": "Real Madrid is a football team."
+    },
+     
+    {
+        "question": "How many teams from Poland won Champions League?",
+        "reference": "No team from Poland won Champions League."
+    },
+
+    {
+        "question": "What is the area of Canada?",
+        "reference": "Canada has 9,984,670 square kilometers."
+    },
 ]
 
 
