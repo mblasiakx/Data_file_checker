@@ -6,7 +6,7 @@ import csv
 from dotenv import load_dotenv
 import mlflow
 
-mlflow.set_experiment("championsLague_and_rome_txt_2")
+mlflow.set_experiment("championsLague_and_rome_txt_no_source_question__2")
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from prompts.prompt_styles import base_questions, format_zero_shot, format_one_shot, format_few_shot, format_cot, format_prompt_injection
